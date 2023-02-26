@@ -50,6 +50,7 @@ btnLoadMore.addEventListener('click', () => {
         `Hooray! We found ${foundData.totalHits} images.`
       );
       btnLoadMore.style.display = 'block';
+      gallerySimpleLightbox.refresh();
     }
   });
 });
@@ -80,7 +81,7 @@ function renderImageList(images) {
     </div>`;
     })
     .join('');
-  gallery.innerHTML += markup;
+  gallery.insertAdjacentHTML('beforeend', markup);
 }
 
 function cleanGallery() {
